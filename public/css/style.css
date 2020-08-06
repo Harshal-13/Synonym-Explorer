@@ -1,0 +1,658 @@
+/*
+* {
+  box-sizing: border-box;
+}
+
+.commafield {
+  display: flex;
+  flex-wrap: wrap;
+
+  overflow: hidden;
+  height: 33px;
+  padding: 3px;
+  margin: 0;
+
+  font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.commafield input {
+  font-size: 1em;
+
+  */
+/* Kill default styles */
+/*
+
+  outline: none;
+  border: none;
+  box-shadow: none;
+  -webkit-appearance: none;
+  background-color: transparent;
+
+  */
+/* Layout */
+/*
+
+  margin: 2px 5px 3px 0;
+  padding: 0 5px;
+  flex: 2;
+  height: 85%;
+}
+
+.item {
+  float: left;
+
+  background-color: rgba(204, 230, 249, 0.6);
+  font-size: 1em;
+
+  padding: 1px 5px 2px 5px;
+  margin: 2px 5px 3px 0;
+
+  flex: 0 1 auto;
+  height: 85%;
+  line-height: 130%;
+
+  cursor: pointer;
+
+  transition: background-color 0.3s ease-in-out;
+}
+
+.item::after {
+  */
+/* Font styles */
+/*
+
+  font-size: 90%;
+  line-height: 90%;
+  color: #ec725d;
+
+  */
+/* Add a close button */
+/*
+
+  font-family: Ionicons;
+  content: "\00a0\f12a";
+
+  */
+/* Allow animating the unfurl of the close button */
+/*
+
+  transition: max-width 0.3s ease-in-out;
+  overflow: hidden;
+  display: inline-block;
+  max-width: 0;
+}
+.item:hover {
+  background-color: rgba(255, 200, 200, 0.6);
+}
+.item:hover::after {
+  max-width: 15px; */
+/* Animate the x unfurling. */
+/*
+
+}
+
+
+*/
+/* Styles for the top bar */
+/*
+
+
+*/
+/* The box that holds the button and input */
+/*
+
+#formbox {
+  padding: 0;
+  display: block;
+  overflow: hidden;
+
+  */
+/* Position */
+/*
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  z-index: 1;
+
+  */
+/* Appearance */
+/*
+
+  box-shadow: 0 4px 4px -2px #ccc;
+}
+
+*/
+/* The buttons */
+/*
+
+#formbox button {
+  */
+/* Color */
+/*
+
+  background-color: rgba(255, 255, 255, 0.6);
+
+  */
+/* Border */
+/*
+
+  outline: none;
+
+  */
+/* Other */
+/*
+
+  padding: 5px 7px;
+  margin: 0;
+  font-size: 18px;
+  float: right;
+  height: 33px;
+  min-width: 33px;
+}
+i.icon.ion-refresh {
+  display: block;
+  transition: all 0.8s ease-in-out;
+}
+i.icon:hover.ion-refresh {
+  transform: rotate(360deg);
+}
+i.icon.ion-refresh:before {
+  position: relative;
+  left: 2px;
+}
+
+*/
+/* To create lines between elements, everything has a right border besides the last element */
+/*
+
+#formbox > * {
+  border: none;
+  border-right: 1px solid #ccc;
+}
+
+#formbox > *:first-child { */
+/* first-child is last because 'float:right;' changes order */
+/*
+
+  border-right: none;
+  padding: 5px 10px;
+}
+*/
+/* Parent of #info, just used to center #info for right now. */
+/*
+
+#container {
+  text-align: center;
+}
+
+*/
+/* Contains for the info initially presented to the user */
+/*
+
+#info {
+  margin: 55px 13px 0 13px;
+  max-width: 450px;
+  padding: 25px;
+
+  border: 2px solid #ccc;
+
+  display: inline-block;
+}
+
+#info h1 {
+  margin-top: 0;
+}
+
+#info p {
+
+}
+
+
+*/
+/* == Rules for small screens == */
+/*
+
+
+@media (max-width: 750px) { */
+/* Full width on small screens (namely iPhones) */
+/*
+
+  #info {
+    max-width: 100%;
+    display: block;
+    text-align: left;
+  }
+}
+
+@media (max-height: 400px) { */
+/* Hide text on iPhones in portrait to prevent button from being cut off */
+/*
+
+  #info p {
+    display: none;
+  }
+}
+.fullscreen {
+  */
+/* Same size as window */
+/*
+
+  width: 100vw;
+  height: 100vh;
+
+  */
+/* No space from top corner */
+/*
+
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+*/
+
+
+/*-----------------------------------------------------------------------------------*/
+.fullscreen {
+  width: 100%;
+  height: 100vh;
+  border: 1px solid black;
+}
+
+.network {
+  padding: 0;
+}
+
+body {
+  background: #fff;
+  color: #666666;
+  font-family: "Open Sans", sans-serif;
+  margin: 0;
+}
+
+a {
+  color: #03C4EB;
+  transition: 0.5s;
+}
+
+a:hover,
+a:active,
+a:focus {
+  color: #03c5ec;
+  outline: none;
+  text-decoration: none;
+}
+
+p {
+  padding: 0;
+  margin: 0 0 30px 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+
+/*--------------------------------------------------------------
+# Welcome
+--------------------------------------------------------------*/
+#hero {
+  display: table;
+  width: 100%;
+  height: 100vh;
+  background: url(../img/networking.jpg) top center;
+
+}
+
+@media (min-width: 1024px) {
+  #hero {
+    background-attachment: fixed;
+  }
+}
+
+#hero .hero-logo {
+  margin: 20px;
+}
+
+#hero .hero-logo img {
+  max-width: 100%;
+}
+
+#hero .hero-container {
+  background: rgba(0, 0, 0, 0.5);
+  display: table-cell;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  vertical-align: middle;
+}
+
+#hero h1 {
+  margin: 30px 0 10px 0;
+  font-weight: 700;
+  line-height: 48px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
+}
+
+#hero h2 {
+  color: #ccc;
+  margin-bottom: 50px;
+}
+
+#hero h2 span {
+  color: #fff;
+  transition: 0.3s;
+  border-bottom: 2px solid #03C4EB;
+}
+
+@media (max-width: 768px) {
+  #hero h2 {
+    font-size: 24px;
+    line-height: 26px;
+    margin-bottom: 30px;
+  }
+
+  #hero h2 .rotating {
+    display: block;
+  }
+}
+
+#hero .rotating>.animated {
+  display: inline-block;
+}
+
+#hero .actions a {
+  font-family: "Raleway", sans-serif;
+  text-transform: uppercase;
+
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 2px;
+  transition: 1s;
+  margin: 10px;
+}
+
+.btn-get-started {
+  background: #03C4EB;
+  border: 2px solid #03C4EB;
+  color: #fff;
+}
+
+.btn-get-started:hover {
+  background: none;
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+.btn-services {
+  border: 2px solid #fff;
+  color: #fff;
+}
+
+#hero .btn-services:hover {
+  background: #03C4EB;
+  border: 2px solid #03C4EB;
+}
+
+
+
+/*--------------------------------------------------------------
+# Sections
+--------------------------------------------------------------*/
+/* Sections Common
+--------------------------------*/
+.section-title {
+  font-size: 32px;
+  color: #111;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 700;
+}
+
+.section-description {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-title-divider {
+  width: 50px;
+  height: 3px;
+  background: #03C4EB;
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+
+/* Get Started Section
+--------------------------------*/
+#about {
+  background: #fff;
+  padding: 80px 0;
+}
+
+#about .about-img {
+  overflow: hidden;
+}
+
+#about .about-img img {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  #about .about-img {
+    height: auto;
+  }
+
+  #about .about-img img {
+    margin-left: 0;
+    padding-bottom: 30px;
+  }
+}
+
+#about .about-content {
+  background: #fff;
+}
+
+#about .about-title {
+  color: #333;
+  font-weight: 700;
+  font-size: 28px;
+}
+
+#about .about-text {
+  line-height: 26px;
+  margin-bottom: 15px;
+}
+
+#about .about-text:last-child {
+  margin-bottom: 0;
+}
+
+.searchb {
+  position: relative;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 300px;
+  height: 100px;
+}
+
+.searchb .search {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 80px;
+  background: #03C4EB;
+  border-radius: 50%;
+  transition: all 1s;
+  z-index: 4;
+  box-shadow: 0 0 12px 0 #03C4EB, 0 10px 12px 0 rgba(0, 0, 0, 0.1);
+}
+
+.searchb .search:hover {
+  cursor: pointer;
+}
+
+.searchb .search::before {
+  content: "";
+  position: absolute;
+  margin: auto;
+  top: 22px;
+  right: 0;
+  bottom: 0;
+  left: 22px;
+  width: 12px;
+  height: 2px;
+  background: white;
+  transform: rotate(45deg);
+  transition: all 0.5s;
+}
+
+.box {
+  width: 40%;
+  margin: 0 auto;
+  background: #b3edf9;
+  padding: 35px;
+  border: 2px solid #fff;
+  border-radius: 20px/50px;
+  background-clip: padding-box;
+  text-align: center;
+}
+
+.buttons {
+
+
+  color: red;
+
+}
+
+.buttons:hover {
+  color: #fff
+}
+
+.searchb .search::after {
+  content: "";
+  position: absolute;
+  margin: auto;
+  top: -5px;
+  right: 0;
+  bottom: 0;
+  left: -5px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid white;
+  transition: all 0.5s;
+}
+
+.searchb input {
+  font-family: "Inconsolata", monospace;
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  outline: none;
+  border: none;
+  background: #03C4EB;
+  color: white;
+  text-shadow: 0 0 10px #03C4EB;
+  padding: 0 80px 0 20px;
+  border-radius: 30px;
+  box-shadow: 0 0 25px 0 #03C4EB, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+  transition: all 1s;
+  opacity: 0;
+  z-index: 5;
+  font-weight: bolder;
+  letter-spacing: 0.1em;
+}
+
+.searchb input:hover {
+  cursor: pointer;
+}
+
+.searchb input:focus {
+  width: 300px;
+  opacity: 1;
+  cursor: text;
+}
+
+/* .searchb input:focus~.search {
+  right: -250px;
+  background: ##03C4DB;
+  z-index: 6;
+} */
+
+.searchb input:focus~.search::before {
+  top: 0;
+  left: 0;
+  width: 25px;
+}
+
+.searchb input:focus~.search::after {
+  top: 0;
+  left: 0;
+  width: 25px;
+  height: 2px;
+  border: none;
+  background: white;
+  border-radius: 0%;
+  transform: rotate(-45deg);
+}
+
+.searchb input::placeholder {
+  color: white;
+  opacity: 0.9;
+  font-weight: bolder;
+}
+
+.go {
+  background: #03C4EB;
+  border: 2px solid #03C4EB;
+  border-radius: 10px;
+  color: #fff;
+}
+
+.go:hover {
+  box-shadow: 0 0 25px 0 #03C4EB, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+  color: #fff;
+  transition: all 1s;
+}
+
+.neumorphism-2 {
+  padding: 10px 10px 10px 10px;
+  height: 100vh;
+  width: 100%;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 3px 3px 7px #ffffffb2, 3px 3px 5px rgba(94, 104, 121, 0.35);
+}
